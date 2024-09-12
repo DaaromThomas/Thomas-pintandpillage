@@ -15,6 +15,7 @@
     "mobile-device-detect": "^0.4.3",
     "moment": "^2.29.4",
     "node-polyfill-webpack-plugin": "^2.0.0",
+    "testfrontendpap": "file:",
     "timers-browserify": "^2.0.12",
     "v-toaster": "^1.0.3",
     "v-tooltip": "^2.1.3",

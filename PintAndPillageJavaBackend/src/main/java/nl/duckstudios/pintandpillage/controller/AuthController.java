@@ -70,7 +70,6 @@ public class AuthController {
         try {
             UsernamePasswordAuthenticationToken authInputToken =
                     new UsernamePasswordAuthenticationToken(body.username, body.password);
-
             authManager.authenticate(authInputToken);
 
             String token = jwtUtil.generateToken(body.username);

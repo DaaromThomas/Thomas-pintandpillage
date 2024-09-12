@@ -44,8 +44,10 @@ public class Seeder {
 
     @EventListener
     public void seed(ContextRefreshedEvent event) {
-        this.seedUser();
-        this.seedVillage();
+        if (!this.userDAO.findByEmail("test5@mail.com").isPresent()) {
+            this.seedUser();
+            this.seedVillage();
+        }
     }
 
     public void seedUser() {
