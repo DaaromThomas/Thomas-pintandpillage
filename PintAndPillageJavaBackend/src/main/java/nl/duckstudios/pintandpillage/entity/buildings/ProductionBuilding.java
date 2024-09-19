@@ -90,6 +90,8 @@ public abstract class ProductionBuilding extends Building {
         if (!this.isAllowedToBuildUnit(unit)) {
             throw new ProductionConditionsNotMetException("Building can't produce unit");
         }
+        System.out.println("researchRequired: " + (unit.getResearchRequired() != ResearchType.None));
+        System.out.println("completedResearch: " + !this.hasCompletedResearch(unit));
         if (unit.getResearchRequired() != ResearchType.None && !this.hasCompletedResearch(unit)) {
             throw new ProductionConditionsNotMetException("Unit not researched");
         }

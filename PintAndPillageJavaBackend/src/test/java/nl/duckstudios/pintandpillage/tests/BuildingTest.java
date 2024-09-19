@@ -1,8 +1,7 @@
-package nl.duckstudios.pintandpillage;
+package nl.duckstudios.pintandpillage.tests;
 
 import nl.duckstudios.pintandpillage.Exceptions.BuildingConditionsNotMetException;
 import nl.duckstudios.pintandpillage.buildings.MockBuilding;
-import nl.duckstudios.pintandpillage.entity.buildings.Building;
 import nl.duckstudios.pintandpillage.helper.ResourceManager;
 import nl.duckstudios.pintandpillage.entity.Village;
 import nl.duckstudios.pintandpillage.model.ResourceType;
@@ -35,11 +34,9 @@ public class BuildingTest {
     //Function: levelUp()
     @Test
     public void should_return_BuildingConditionsNotMetException_when_not_enough_resources_available() {
-        //act
         when(resourceManager.hasEnoughResourcesAvailable(eq(this.village), anyMap()))
                 .thenReturn(false);
 
-        //assert
         assertThrows(BuildingConditionsNotMetException.class, () -> building.levelUp());
     }
 
@@ -69,9 +66,4 @@ public class BuildingTest {
         //assert
         verify(resourceManager, times(1)).subtractResources(eq(village), anyMap());
     }
-
-
-    //Function:
-
-
 }
