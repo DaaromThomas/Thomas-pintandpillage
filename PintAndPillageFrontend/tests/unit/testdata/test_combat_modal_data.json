@@ -1,0 +1,30 @@
+{
+  "unitsInVillage": [
+    {
+      "amount": 5,
+      "key": 1,
+      "unit": {
+        "shipCapacity": 10,
+        "unitName": "LongShip"
+      }
+    },
+    {
+      "amount": 5,
+      "key": 2,
+      "unit": {
+        "unitName": "Warrior"
+      }
+    }
+  ],
+  "village": {
+    "data": {
+      "villageId": 1,
+      "villageName": "My Village",
+      "resources": {
+        "gold": 1000,
+        "wood": 500,
+        "stone": 300
+      }
+    }
+  }
+}

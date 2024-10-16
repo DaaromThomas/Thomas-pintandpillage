@@ -4,27 +4,27 @@
            <div class="unitImage">
                <img :src="require('../../../assets/ui-items/' + unit.unit.unitName + '.png')" width="77px" height="70px"/>
                <div class="unitsInStore">
-                   <p>{{getUnitAmount(unit.unit.unitName)}}</p>
+                   <p id="unit-amount">{{getUnitAmount(unit.unit.unitName)}}</p>
                </div>
            </div>
            <div class="unitDescription">
-               <h1>{{unit.unit.unitName}}</h1>
-               <h2>{{unit.unit.description}}</h2>
-               <p>Attack: {{unit.unit.attack}} - Defence: {{unit.unit.defence}} - Health: {{unit.unit.health}} - Speed: {{unit.unit.speed}}</p>
+               <h1 id="unit-name">{{unit.unit.unitName}}</h1>
+               <h2 id="unit-description">{{unit.unit.description}}</h2>
+               <p id="unit-stats">Attack: {{unit.unit.attack}} - Defence: {{unit.unit.defence}} - Health: {{unit.unit.health}} - Speed: {{unit.unit.speed}}</p>
                <div class="sliderDiv">
-                   <input :disabled="!canRecruit()" type="range" min="1" :max="unitMaxProduce" :value="sliderValue" class="slider" v-on:input="updateSliderValue($event)">
+                   <input id="unit-slider" :disabled="!canRecruit()" type="range" min="1" :max="unitMaxProduce" :value="sliderValue" class="slider" v-on:input="updateSliderValue($event)">
                    <div class="unitInputContainer">
-                       <input :disabled="!canRecruit()" type="number" min="1" class="unitInput" :value="sliderValue" v-on:input="updateSliderValue($event)" @keypress="validateNumberInput(unitMaxProduce, $event)">
+                     <input id="unit-input" :disabled="!canRecruit()" type="number" min="1" class="unitInput" :value="sliderValue" v-on:input="updateSliderValue($event)" @keypress="validateNumberInput(unitMaxProduce, $event)">
                    </div>
-                   <button :disabled="!canRecruit()" @click="createUnit" @keyup.enter="close()">Train</button>
+                   <button id="train-button" :disabled="!canRecruit()" @click="createUnit" @keyup.enter="close()">Train</button>
                </div>
                <div class="unitResources">
                    <resource-item :checkAvailability='checkAvailability' class="resourceItemComp" :resources="unit.unit.resourcesRequiredToProduce" :displayTooltip="false"></resource-item>
                    <population-frame class="populationFrameComp" :population-left="unit.unit.populationRequiredPerUnit"></population-frame>
                    <time-frame class="timeComp" :required-time="unit.unit.baseTimeToProduce"></time-frame>
                </div>
-               <h2 class="unitLevelRequirements" v-if="!unitLevelRequirementMet().requirementMet">Unit requires {{building.name}} level {{unitLevelRequirementMet().buildingLevel}}</h2>
-               <h2 class="unitResearchRequirements" v-if="!unitResearchRequirementMet().requirementMet">Unit requires research {{unitResearchRequirementMet().research}}</h2>
+               <h2 id="unit-level-requirement" class="unitLevelRequirements" v-if="!unitLevelRequirementMet().requirementMet">Unit requires {{ building.name }} level {{ unitLevelRequirementMet().buildingLevel }}</h2>
+               <h2 id="unit-research-requirement" class="unitResearchRequirements" v-if="!unitResearchRequirementMet().requirementMet">Unit requires research {{ unitResearchRequirementMet().research }}</h2>
            </div>
        </div>
        <hr width="80%">

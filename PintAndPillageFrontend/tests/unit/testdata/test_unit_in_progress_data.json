@@ -1,0 +1,35 @@
+{
+  "building": {
+    "buildingId": 1,
+    "productionQueue": [
+      {
+        "key": "1",
+        "unitToProduce": {
+          "unitName": "Scout"
+        },
+        "amountToProduce": 10,
+        "totalTimeToProduce": 300,
+        "constructionTimeLeft": 150
+      },
+      {
+        "key": "2",
+        "unitToProduce": {
+          "unitName": "Jarl"
+        },
+        "amountToProduce": 5,
+        "totalTimeToProduce": 200,
+        "constructionTimeLeft": 100
+      }
+    ],
+    "unlockedUnitsData": [
+      {
+        "unitName": "Scout",
+        "description": "A fast scouting unit."
+      },
+      {
+        "unitName": "Jarl",
+        "description": "A strong melee unit."
+      }
+    ]
+  }
+}

@@ -10,7 +10,7 @@
                 </h2>
             </div>
         </div>
-        <p v-if="building.productionQueue.length == 0" style="text-align: center; font-size: 14px">No units being trained right now</p>
+        <p class="no-unit-text" v-if="building.productionQueue.length == 0" style="text-align: center; font-size: 14px">No units being trained right now</p>
     </div>
 </template>
 

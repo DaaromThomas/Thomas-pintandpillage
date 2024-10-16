@@ -1,0 +1,40 @@
+{
+  "unit": {
+    "unit": {
+      "unitName": "Scout",
+      "description": "A melee combat unit.",
+      "attack": 15,
+      "defence": 10,
+      "health": 100,
+      "speed": 1,
+      "resourcesRequiredToProduce": { "food": 50, "wood": 20, "stone": 15, "iron": 10 },
+      "populationRequiredPerUnit": 1,
+      "baseTimeToProduce": 30,
+      "researchRequired": "None"
+    }
+  },
+  "building": {
+    "name": "Barracks",
+    "level": 2,
+    "buildingId": 1
+  },
+  "unitUnlockList": [
+    { "unitType": "Swordsman", "level": 1 }
+  ],
+  "village": {
+    "villageResources": {
+      "food": 1000,
+      "wood": 500,
+      "stone": 300,
+      "iron": 200
+    },
+    "populationLeft": 50,
+    "unitsInVillage": [
+      { "unit": { "unitName": "Scout" }, "amount": 10 }
+
+    ],
+    "completedResearches": [
+      { "researchName": "Advanced Weaponry" }
+    ]
+  }
+}
